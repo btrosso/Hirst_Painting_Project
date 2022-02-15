@@ -62,6 +62,8 @@ for y in range(col):
 
     new_row(tim)
 
+tim.ht()
+
 # instantiating the screen
 screen = t.Screen()
 screen.exitonclick()
