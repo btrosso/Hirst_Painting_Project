@@ -1,3 +1,5 @@
+import turtle as t
+import random
 # import colorgram
 #
 # colors = colorgram.extract("image.jpg", 30)
@@ -18,3 +20,48 @@ color_list = [(202, 164, 109), (238, 240, 245), (150, 75, 49), (223, 201, 135), 
 # 10x10 spot painting
 # dot_size = 20
 # dot_spacing = 50
+
+def new_row(turtle):
+    """
+    Used to move to a new row.
+    :param turtle:
+    :return:
+    """
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.left(90)
+    turtle.forward(500)
+    turtle.setheading(0)
+
+
+def make_dot(turtle, color_pallet):
+    """
+    Used to make a dot and move to the next spot.
+    :param turtle:
+    :param color_pallet:
+    :return:
+    """
+    turtle.dot(20, random.choice(color_pallet))
+    turtle.forward(50)
+
+
+tim = t.Turtle()
+tim.speed("fastest")
+t.colormode(255)
+tim.pu()
+tim.setposition(-250, -200)
+print(tim.position())
+
+
+# logic to create the grid of dots
+row = 10
+col = 10
+for y in range(col):
+    for x in range(row):
+        make_dot(turtle=tim, color_pallet=color_list)
+
+    new_row(tim)
+
+# instantiating the screen
+screen = t.Screen()
+screen.exitonclick()
