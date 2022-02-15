@@ -49,6 +49,7 @@ tim = t.Turtle()
 tim.speed("fastest")
 t.colormode(255)
 tim.pu()
+tim.ht()
 tim.setposition(-250, -200)
 print(tim.position())
 
@@ -62,7 +63,6 @@ for y in range(col):
 
     new_row(tim)
 
-tim.ht()
 
 # instantiating the screen
 screen = t.Screen()
